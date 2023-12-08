@@ -45,6 +45,7 @@ public class AppConfig {
                 cfg.setMaxAge(3600L);
 
                 return cfg;
+
             }
         };
     }
