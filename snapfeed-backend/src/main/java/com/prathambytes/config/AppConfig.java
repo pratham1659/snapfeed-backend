@@ -1,6 +1,7 @@
 package com.prathambytes.config;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -24,7 +25,7 @@ public class AppConfig {
             .and()
             .authorizeHttpRequests(Authorize -> Authorize.requestMatchers("/api/**").authenticated()
                     .anyRequest().permitAll()
-            ).addFilterBefore(null, BasicAuthenticationFilter.class)
+            ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
             .csrf().disable()
             .cors().configurationSource(corsConfigurationSource()).and()
             .httpBasic().and().formLogin();
@@ -50,6 +51,7 @@ public class AppConfig {
         };
     }
 
+    @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
