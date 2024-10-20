@@ -2,7 +2,12 @@ const moment = require("moment");
 const simpleGit = require("simple-git");
 const git = simpleGit();
 
-const DATE = moment().subtract(1, "M").add(9, "d").format();
+const DATE = moment()
+  .subtract(1, "M")
+  .add(5, "d")
+  .add(Math.floor(Math.random() * 24), "hours")
+  .add(Math.floor(Math.random() * 60), "minutes")
+  .format();
 
 const data = {
   date: DATE,
