@@ -4,7 +4,7 @@ const git = simpleGit();
 
 const DATE = moment()
   .subtract(1, "M")
-  .add(7, "d")
+  .add(8, "d")
   .add(Math.floor(Math.random() * 24), "hours")
   .add(Math.floor(Math.random() * 60), "minutes")
   .format();
