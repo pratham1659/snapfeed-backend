@@ -2,7 +2,7 @@ const moment = require("moment");
 const simpleGit = require("simple-git");
 const git = simpleGit();
 
-const DATE = moment().subtract(1, "M").add(10, "d").format();
+const DATE = moment().subtract(1, "M").add(9, "d").format();
 
 const data = {
   date: DATE,
@@ -10,7 +10,7 @@ const data = {
 
 console.log(data);
 
-const commitMessage = "new file added";
+const commitMessage = "test file added";
 
 git
   .add("./*")
