@@ -4,7 +4,7 @@ const git = simpleGit();
 
 const DATE = moment()
   .subtract(1, "M")
-  .add(8, "d")
+  .add(10, "d")
   .add(Math.floor(Math.random() * 24), "hours")
   .add(Math.floor(Math.random() * 60), "minutes")
   .format();
@@ -15,7 +15,7 @@ const data = {
 
 console.log(data);
 
-const commitMessage = "test file added";
+const commitMessage = "new model file added";
 
 git
   .add("./*")
